@@ -529,3 +529,7 @@ details.info summary::before {
 .admonition-title {
   font-weight: 650 !important;
 }
+
+strong {
+  font-weight: 600 !important;
+}
