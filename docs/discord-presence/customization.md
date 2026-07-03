@@ -10,9 +10,9 @@ tags:
 # Appearance Customization
 
 This guide covers how to customize Music Presence's appearance in Discord. The default settings are in the General tab,
-and media player-specific settings are in the player-specific tabs.
+and media player-specific overrides are in the player-specific tabs.
 
-<!-- TODO: Add a screenshot of the General tab here once the UI is finalized. -->
+![Image of the appearance tab](/_static/media/customization-appearance-tab.png)
 
 ---
 
@@ -24,21 +24,12 @@ These options apply are applied to all enabled players.
 
 Controls the main Discord activity line that appears on your nameplate.
 
-<!-- TODO: screenshot of default display -->
-
 Possible choices to select from:
 
 - Player name: Name of the music player ("Spotify", "Apple Music", etc.)
 - Artist line: Names of all song artists separated by commas (Example: "Taylor Swift, Ed Sheeran, Future")
 - Title line: Name of the currently playing song. (Example: "End Game")
-- Media type: Usually "Music" (<!-- add other media types -->)
-
-<!-- fix jetbrains from undindeting this -->
-???+ info
-To use your own custom text, go to the [Discord Developer Portal](https://discord.com/developer/applications) and click
-on "New application". Enter the desired text you want to display on your profile and click on "Create". On
-the new page that opened, look for "Application ID" and copy it into the "Application ID" field in the Music Presence
-settings. If the ID is valid the text that will be shown on your profile is displayed next to the entered ID.
+- Media type: Usually "Music"
 
 | Setting                  | Description                                                                                                                                        | Example                            |
 |--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------|
@@ -47,17 +38,28 @@ settings. If the ID is valid the text that will be shown on your profile is disp
 | **Profile display text** | What appears next to the Activity type when clicking on your profile. <br/> Possible choices: Player name, Artist/Title line, Media type or Custom | "Listening to **Music**"           |
 | **Application ID**       | Use this to enter the application ID of an application to display the name of the application in all fields where "Custom" is selected             | "Listening to **Your Custom Text** |
 
+???+ info "Displaying custom text"
+    To use your own custom text, go to the [Discord Developer Portal](https://discord.com/developer/applications) and click
+    on "New application". Enter the desired text you want to display on your profile and click on "Create". On
+    the new page that opened, look for "Application ID" and copy it into the "Application ID" field in the Music Presence
+    settings. If the ID is valid the text that will be shown on your profile is displayed next to the entered ID.
+
+
 ### Song Display
 
 Edit what and how the song details are displayed in your profile and in the member list.
-The default display order is:
+The display order for the profile widget are:
 
-- \[Activity type] \[Display text]
-- \[Artist line]
-- \[Title line]
-- \[Album]
+1. \[Activity type] \[Profile display text]
+2. \[Title line]
+3. \[Artist line]
+4. \[Album]
 
-<!-- todo: add screenshot -->
+![Preview of what default settings look like](/_static/media/customization-default-presence.png)
+
+The selected "Display text" option is shown under your nameplate. This is the Artist line by default.
+
+![Preview of what the nameplate looks like](/_static/media/customization-default-nameplate.png)
 
 | Option                                          | Effect                                                                                                                                                                                                               |
 |-------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -68,16 +70,16 @@ The default display order is:
 | Prefix the album name with "on"                 | Prepends the word "on" before the album name.                                                                                                                                                                        |
 | Show the album name                             | Show the album name on the profile widget. Disabling this also disables "Show the artist and album on a single line". <br/> Cannot be turned off when "Show the artist and album on a single line" is enabled.       |
 | Show the album name when the artist is missing  | Displays the album as a fallback when no artist metadata is present. Works even when "Show the album name" is turned off. <br/> The artist and album lines are both set to "Album name"                              |
-| Show playback information                       | Shows the playback progress bar.                                                                                                                                                                                     |
+| Show playback information                       | Shows the playback progress bar. If disabled, a simple clock counting up will still be shown and cannot be disabled due to discord limitations.                                                                      |
 | Do not show any song information                | Hides all track metadata except the progres bar, activity type, and fallback cover image from your profile widget and nameplate.                                                                                     |
 
 !!! tip
-You can combine "Show song title and artist on a single line" and "Swap the order of the song title and artist" to set
-the artist and title lines to "Artist - Song name".
+    You can combine "Show song title and artist on a single line" and "Swap the order of the song title and artist" to set
+    the artist and title lines to "Artist - Song name".
 
 !!! tip
-You can combine "Show the artist and album on a single line" and "Swap the order of the song title and artist" to set
-the song line to "Artist" and set the album and artist lines to "Song name - Album".
+    You can combine "Show the artist and album on a single line" and "Swap the order of the song title and artist" to set
+    the song line to "Artist" and set the album and artist lines to "Song name - Album".
 
 ### Paused Media
 
@@ -100,7 +102,7 @@ Configure appearance settings for local media players.
 | Show the logo of the media player         | Shows the logo of the media player in the bottom right corner of the cover image. |
 
 !!! warning
-These settings do not apply to streaming services
+    These settings do not apply to streaming services, as their ToS indicate that a logo has to be visible.
 
 ### Links
 
@@ -120,8 +122,8 @@ streaming service's website.
 | Show "Get this status" in the presence                    | Adds a button to your profile that links to the Music Presence website.<br/> Due to discord limitations, this button will not be shown when both the custom button and the link to the song button are enabled.           |
 
 !!! warning
-Due to a discord bug, buttons are only visible to other users. You cannot see your own buttons, but other people can see
-them and use them. Use an alternate account and look at the profile of your main account if you want to see the buttons.
+    Due to a discord bug, buttons are only visible to other users. You cannot see your own buttons, but other people can see
+    them and use them. Use an alternate account and look at the profile of your main account if you want to see the buttons.
 
 ### Miscellaneous
 
