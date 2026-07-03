@@ -7,18 +7,26 @@ tags:
     - Discord Presence
 ---
 
-# Appearance Customization
+This guide covers how you can customize your Discord status.
 
-This guide covers how to customize Music Presence's appearance in Discord. The default settings are in the General tab,
-and media player-specific overrides are in the player-specific tabs.
+## Finding the settings
 
-![Image of the appearance tab](/_static/media/customization-appearance-tab.png)
+All customization options are located under **Discord -> Appearance** in the settings of the app. The "General" tab applies to all media players, while the player tabs contain overrides for individual settings which only apply to that respective media player.
 
----
+![Screenshot of the appearance settings tab](/_static/media/customization-appearance-tab.png)
 
-## General Settings
+<!-- TODO Make the screenshot less tall and less wide, it takes up too much vertical space and its large width makes the text smaller. -->
+<!-- TODO Remove the background of the screenshot, it's distracting. -->
+<!-- TODO Add dark-mode and light-mode variants of the screenshot. -->
+<!-- TODO The window should contain a title bar and window buttons, so it's more recognizable. -->
+<!-- TODO Use better-known media players and streaming services for demonstration, so it's easier to understand the additional tabs are player tabs. -->
+<!-- TODO Don't make a screenshot of the beta, preferrably. -->
 
-These options apply are applied to all enabled players.
+For an explanation of each general customization option, read [General customization](#general-customization). If you are interested in player-specific customization, read [Per-player customization](#per-player-customization).
+
+## General customization
+
+These options apply to all enabled media players.
 
 ### Presence
 
@@ -45,7 +53,7 @@ Possible choices to select from:
     settings. If the ID is valid the text that will be shown on your profile is displayed next to the entered ID.
 
 
-### Song Display
+### Song information
 
 Edit what and how the song details are displayed in your profile and in the member list.
 The display order for the profile widget are:
@@ -81,7 +89,7 @@ The selected "Display text" option is shown under your nameplate. This is the Ar
     You can combine "Show the artist and album on a single line" and "Swap the order of the song title and artist" to set
     the song line to "Artist" and set the album and artist lines to "Song name - Album".
 
-### Paused Media
+### Paused media
 
 Choose what happens when your media is paused.
 
@@ -92,7 +100,7 @@ Choose what happens when your media is paused.
 | Freeze the progress bar for paused media | Freezes the prograss bar or elapsed time at 0 seconds.                                                                           |
 | Show for how long media is paused        | Displays for how long the media has been paused. (does the same thing as disabling freeze progress bar???? from what i can test) |
 
-### Offline Players
+### Offline players
 
 Configure appearance settings for local media players.
 
@@ -133,7 +141,7 @@ streaming service's website.
 
 ---
 
-## Per-Player settings
+## Per-player customization
 
 Each detected player has its own tab in the settings window, the settings override the global settings for that player
 only.
@@ -149,6 +157,8 @@ These settings work the same as the global settings, but only apply to this play
 separate from the global setting so different players can have different custom texts.
 
 Overridden fields show a "Reset" button to reset them to the settings defined in the General tab.
+
+### Paused media
 
 ### Offline players
 
