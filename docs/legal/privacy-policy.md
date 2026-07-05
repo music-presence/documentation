@@ -22,7 +22,7 @@ Instructions on updating this Privacy Policy:
 - Make sure to update the "Last updated" date at the bottom of the document
 
 TODO:
-- Document the e-mail provider that processes and sends the user their license
+- Document the e-mail provider that processes and sends the user their license (add section "5.9 E-Mail Providers")
 
 -->
 
@@ -479,10 +479,6 @@ Privacy Policy: https://simpleanalytics.com/privacy-policy
 Article "We don't track people": https://dashboard.simpleanalytics.com/no-tracking  
 Help page "Data Collection": https://docs.simpleanalytics.com/data-collection
 
-### 5.9 E-Mail Providers
-
-> TODO
-
 ## 6. Encryption
 
 All data that is sent over the network is encrypted with the use of modern and secure transport protocols. Media Metadata that is sent to Discord for Discord Rich Presence functionality communicates with the locally running Discord client application without the use of a connection over an external network and therefore does not use encryption nor does it need to use encryption, since it does not leave the user's device.
@@ -520,7 +516,7 @@ We may update this policy to reflect changes in our information practices or leg
 
 We encourage you to periodically review this page for the latest information on our privacy practices, especially if you haven't used the Software for a while or a longer period of time has passed since you last visited one of our websites.
 
-Last updated on 14 May 2026.
+Last updated on 5 July 2026.
 
 ## 11. Contact
 
