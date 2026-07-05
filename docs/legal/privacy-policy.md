@@ -28,7 +28,7 @@ TODO:
 
 # Privacy Policy
 
-Effective date: Not effective. You can always find the currently effective version of our Privacy Policy through the redirect at https://go.musicpresence.app/privacy.
+Effective date: 7 July 2026
 
 Welcome to the Music Presence Privacy Policy. This is where we describe how we handle your data, which is data that is collected when you use our Services and information that is directly linked or can be linked to you. It applies to the data that we process when you interact with websites, applications and services listed in section [2. Scope](#2-scope).
 
