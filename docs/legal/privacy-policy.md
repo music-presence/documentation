@@ -209,7 +209,7 @@ This data is collected for the following purposes:
 
 When you visit any of our websites, we may collect anonymous Analytics Metrics. This is outlined in detail in section [3.4 Analytics Metrics](#34-analytics-metrics). This data is processed by [Simple Analytics](https://www.simpleanalytics.com/), see section [5.8 Simple Analytics](#58-simple-analytics) for more details.
 
-When you visit our websites, our Website Hosters may collect data during your visit, see section [5.6 Website Hosters](#56-website-hosters) for more information. This may include, among other data, the following information (this list is not exhaustive and depends on the browser you use):
+When you visit our websites, our website hosters and other web services we use may collect data during your visit, see section [5.6 Web Services](#56-web-services) for more information. This may include, among other data, the following information (this list is not exhaustive and depends on the browser you use):
 
 - The browser you use and the browser language
 - The operating system you use
@@ -431,7 +431,7 @@ Patreon is a membership platform that helps connect fans with creators they love
 Website: https://www.patreon.com  
 Privacy Policy: https://privacy.patreon.com/policies/en
 
-### 5.6 Website Hosters
+### 5.6 Web Services
 
 #### 5.6.1 GitHub
 
@@ -446,6 +446,13 @@ Our servers and some of our web servers are hosted by [Snel.com B.V., Schuttevae
 Website: https://www.snel.com  
 Data Processing Agreement: https://www.snel.com/data-processing-agreement  
 Privacy Policy: https://www.snel.com/privacy-statement
+
+#### 5.6.3 Shields.io
+
+Some of our websites show dynamic Shields.io "badges" with live metrics. For this your browser makes a request to Shields.io's servers. Your data is processed according to their Privacy Policy.
+
+Website: https://shields.io  
+Privacy Policy: https://shields.io/privacy
 
 ### 5.7 GitHub
 
