@@ -22,7 +22,7 @@ Instructions on updating this Privacy Policy:
 - Make sure to update the "Last updated" date at the bottom of the document
 
 TODO:
-- Document the e-mail provider that processes and sends the user their license (add section "5.9 E-Mail Providers")
+- Document the e-mail provider that processes and sends the user their license (add section "5.9 E-Mail Providers"). Update the section link in section "4.2 Scrobbling" accordingly
 
 -->
 
@@ -279,7 +279,7 @@ The Software also offers the option to connect a non-standard target server for 
 
 Any data that is collected to provide Scrobbling functionality may be sent to Custom Scrobbling Targets, should you choose to connect such a Custom Scrobbling Target under *Scrobbling* -> *Accounts* in the settings window of the Software. We make no guarantees as to how this data is processed or if it is securely encrypted during transmission, as this almost exclusively depends on the Custom Scrobbling Target's server configuration and security practices. Use Custom Scrobbling Targets at your own risk, as your use of them is not covered by this Privacy Policy.
 
-Your name and e-mail address that you provided while purchasing a license (see [3.7 Payment Information](#37-payment-information)) are part of the Scrobbling license file that is sent to you by e-mail after you complete the purchase and are contained in a readable format in that license file. We make use of external e-mail providers in order to reliably deliver your Scrobbling license file to you, the license file and the data therein (including your name and e-mail address) are handled according to the privacy policies of those e-mail providers, see section [5.9 E-Mail Providers](#59-e-mail-providers).
+Your name and e-mail address that you provided while purchasing a license (see [3.7 Payment Information](#37-payment-information)) are part of the Scrobbling license file that is sent to you by e-mail after you complete the purchase and are contained in a readable format in that license file. We make use of external e-mail providers in order to reliably deliver your Scrobbling license file to you, the license file and the data therein (including your name and e-mail address) are handled according to the privacy policies of those e-mail providers, see section [5.9 E-Mail Providers](#).
 
 ### 4.3 Music API Services
 
