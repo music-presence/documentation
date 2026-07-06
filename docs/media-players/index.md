@@ -2,13 +2,19 @@
 title: Supported Players
 description: A list of the media players supported by Music Presence.
 icon: lucide/music
+hide:
+    - navigation
+    - toc
+    - tags
 ---
 
-#Supported Media Players
+# Supported Media Players
 
 This is the list of every media player supported by Music Presence, search your media player to see if it's supported.
 
 If you have trouble finding your player, sort it by platform.
+
+Note that Web only works with Firefox on Linux at the moment.
 
 <div class="mp-page">
   <div class="mp-controls">
@@ -18,10 +24,10 @@ If you have trouble finding your player, sort it by platform.
 
     <div class="mp-filters">
       <span class="mp-filter-label">Platform:</span>
-      <button type="button" class="mp-btn" data-platform="windows"><img class="mp-filter-icon" src="./_static/images/media-players/windows-11.png" alt="Windows" />Windows</button>
-      <button type="button" class="mp-btn" data-platform="mac"><img class="mp-filter-icon" src="./_static/images/media-players/mac-os.png" alt="Mac" />Mac</button>
-      <button type="button" class="mp-btn" data-platform="linux"><img class="mp-filter-icon" src="./_static/images/media-players/linux.png" alt="Linux" />Linux</button>
-      <button type="button" class="mp-btn" data-platform="web"><img class="mp-filter-icon" src="./_static/images/media-players/web.png" alt="Web" />Web</button>
+      <button type="button" class="mp-btn" data-platform="windows"><img class="mp-filter-icon" src="https://img.icons8.com/ios-filled/50/windows-11.png" alt="Windows" />Windows</button>
+      <button type="button" class="mp-btn" data-platform="mac"><img class="mp-filter-icon" src="https://img.icons8.com/ios-glyphs/120/mac-os.png" alt="Mac" />Mac</button>
+      <button type="button" class="mp-btn" data-platform="linux"><img class="mp-filter-icon" src="https://img.icons8.com/ios-filled/100/linux.png" alt="Linux" />Linux</button>
+      <button type="button" class="mp-btn" data-platform="web"><img class="mp-filter-icon" src="https://img.icons8.com/ios/100/globe--v1.png" alt="Web" />Web</button>
     </div>
   </div>
 
@@ -32,13 +38,22 @@ If you have trouble finding your player, sort it by platform.
 
 <style>
 .mp-page {
-  margin: 1rem 0;
+  margin: 0.8rem auto;
+  width: min(100%, 1360px);
+  max-width: 1360px !important;
   background: #ffffff;
   color: #111827;
-  border-radius: 16px;
-  padding: 1.5rem;
+  border-radius: 12px;
+  padding: 1rem 2rem;
   border: 1px solid #e5e7eb;
 }
+.mp-intro {
+  max-width: 1000px;
+  margin: 0 auto 1.5rem;
+  padding: 0 1rem;
+  line-height: 1.75;
+}
+
 .mp-summary {
   margin-bottom: 1.5rem;
   line-height: 1.7;
@@ -51,7 +66,7 @@ If you have trouble finding your player, sort it by platform.
 }
 .mp-search input {
   width: 100%;
-  border: 1px solid #d1d5db;
+  border: 1px solid #E5E7EB;
   border-radius: 12px;
   padding: 0.85rem 1rem;
   font-size: 1rem;
@@ -77,23 +92,24 @@ If you have trouble finding your player, sort it by platform.
   background: #f9fafb;
   color: #111827;
   border-radius: 999px;
-  padding: 0.6rem 1rem;
+  padding: 0.45rem 0.75rem;
   cursor: pointer;
-  transition: background 0.2s, border-color 0.2s;
+  transition: background 0.16s, border-color 0.16s;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
+  font-size: 0.95rem;
 }
 .mp-filter-icon {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   display: inline-block;
 }
 .mp-btn:hover,
 .mp-btn.active {
-  background: #2563eb;
+  background: #5c8aee;
   color: #ffffff;
-  border-color: #2563eb;
+  border-color: #5c8aee;
 }
 .mp-sort select {
   min-width: 180px;
@@ -105,14 +121,28 @@ If you have trouble finding your player, sort it by platform.
 }
 .mp-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.9rem;
+}
+
+@media (max-width: 1200px) {
+  .mp-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 700px) {
+  .mp-grid { grid-template-columns: 1fr; }
 }
 .mp-card {
   background: #f8fafc;
   border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 1rem;
+  border-radius: 10px;
+  padding: 0.9rem;
+  height: 220px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
 }
 .mp-card-header {
   display: flex;
@@ -121,64 +151,76 @@ If you have trouble finding your player, sort it by platform.
   margin-bottom: 1rem;
 }
 .mp-card-logo,
-.mp-card-logo-fallback {
-  width: 50px;
-  height: 50px;
+ .mp-card-logo-fallback {
+  width: 44px;
+  height: 44px;
   flex-shrink: 0;
-  border-radius: 16px;
+  border-radius: 6px;
   display: grid;
   place-items: center;
   background: #eef2ff;
   color: #1e293b;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 .mp-card-logo img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  border-radius: 16px;
+  border-radius: 0;
 }
 .mp-card-title {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
 }
+.mp-card-title, .mp-card-title * {
+  max-width: 100%;
+  overflow: hidden;
+}
+.mp-player-url {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  font-size: 0.72rem;
+  line-height: 1.2rem;
+  max-width: 100%;
+  word-break: break-word;
+  white-space: normal;
+}
 .mp-card-title .name {
   font-weight: 700;
+  font-size: 1.05rem;
 }
 .mp-card-title .id {
   color: #4b5563;
   font-size: 0.95rem;
 }
-.mp-card-name-link {
-  color: #1d4ed8;
-  text-decoration: underline;
-}
-.mp-card-name-link:hover {
-  color: #1e40af;
-}
 .mp-platforms {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.45rem;
-  margin-bottom: 1rem;
+  gap: 0.35rem;
+  margin-bottom: 0.6rem;
 }
 .mp-platform {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  padding: 0.3rem 0.65rem;
+  gap: 0.3rem;
+  padding: 0.18rem 0.45rem;
   border-radius: 999px;
-  background: #e2e8f0;
+  background: #eef2f6;
   color: #1f2937;
-  font-size: 0.88rem;
+  font-size: 0.78rem;
+  white-space: nowrap;
 }
 .mp-link {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  color: #2563eb;
+  color: #5c8aee;
   font-weight: 600;
   text-decoration: none;
 }
@@ -197,7 +239,7 @@ If you have trouble finding your player, sort it by platform.
   [data-md-color-scheme="slate"] .mp-page {
     background: #1B1B1B;
     color: #e5e7eb;
-    border-color: #2f2f2f;
+    border-color: #2F2F2F;
   }
   [data-md-color-scheme="slate"] .mp-summary {
     color: #cbd5e1;
@@ -221,9 +263,9 @@ If you have trouble finding your player, sort it by platform.
   }
   [data-md-color-scheme="slate"] .mp-btn:hover,
   [data-md-color-scheme="slate"] .mp-btn.active {
-    background: #2563eb;
+    background: #5c8aee;
     color: #ffffff;
-    border-color: #2563eb;
+    border-color: #5c8aee;
   }
   [data-md-color-scheme="slate"] .mp-filter-icon {
     filter: brightness(0) invert(1);
@@ -239,14 +281,14 @@ If you have trouble finding your player, sort it by platform.
   }
   [data-md-color-scheme="slate"] .mp-card-logo,
   [data-md-color-scheme="slate"] .mp-card-logo-fallback {
-    background: #242424;
+    background: #1B1B1B;
     color: #e5e7eb;
   }
   .mp-platform-icon {
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
     vertical-align: middle;
-    margin-right: 0.35rem;
+    margin-right: 0.25rem;
     filter: none;
   }
   [data-md-color-scheme="slate"] .mp-platform-icon {
@@ -274,7 +316,6 @@ If you have trouble finding your player, sort it by platform.
 <script>
 (function () {
   const DATA_URL = 'https://live.musicpresence.app/v3/players.json';
-  const playersToRemove = ['neutron-music-player-placeholder', 'metrolist', 'outertune', 'poweramp', 'media', 'netease-cloud-music-zh-placeholder', 'kugou-zh-placeholder', 'qishui-zh-placeholder', 'qq-music-zh-placeholder', 'adamp'];
   let players = [];
   let icons = {};
   let filtered = [];
@@ -305,10 +346,10 @@ If you have trouble finding your player, sort it by platform.
 
   function getPlatformIcon(platform) {
     const iconsMap = {
-      Windows: '../_static/images/platform/windows-11.png',
-      Mac: '../_static/images/platform/mac-os.png',
-      Linux: '../_static/images/platform/linux.png',
-      Web: '../_static/images/platform/web.png'
+      Windows: 'https://img.icons8.com/ios-filled/50/windows-11.png',
+      Mac: 'https://img.icons8.com/ios-glyphs/120/mac-os.png',
+      Linux: 'https://img.icons8.com/ios-filled/100/linux.png',
+      Web: 'https://img.icons8.com/ios/100/globe--v1.png'
     };
     return iconsMap[platform] || '';
   }
@@ -357,16 +398,18 @@ If you have trouble finding your player, sort it by platform.
       title.className = 'mp-card-title';
       const nameDiv = document.createElement('div');
       nameDiv.className = 'name';
+      const nameText = document.createElement('div');
+      nameText.textContent = player.name;
+      nameDiv.appendChild(nameText);
+
       if (player.url) {
-        const nameLink = document.createElement('a');
-        nameLink.className = 'mp-card-name-link';
-        nameLink.href = player.url;
-        nameLink.target = '_blank';
-        nameLink.rel = 'noopener';
-        nameLink.textContent = player.name;
-        nameDiv.appendChild(nameLink);
-      } else {
-        nameDiv.textContent = player.name;
+        const urlLink = document.createElement('a');
+        urlLink.className = 'mp-player-url';
+        urlLink.href = player.url;
+        urlLink.target = '_blank';
+        urlLink.rel = 'noopener';
+        urlLink.textContent = player.url.replace(/^https?:\/\//, '');
+        nameDiv.appendChild(urlLink);
       }
       title.appendChild(nameDiv);
 
@@ -385,8 +428,8 @@ If you have trouble finding your player, sort it by platform.
           platformImg.className = 'mp-platform-icon';
           platformImg.src = getPlatformIcon(pl);
           platformImg.alt = pl;
-          platformImg.width = 14;
-          platformImg.height = 14;
+          platformImg.width = 12;
+          platformImg.height = 12;
 
           platformTag.appendChild(platformImg);
           platformTag.appendChild(document.createTextNode(pl));
@@ -399,12 +442,51 @@ If you have trouble finding your player, sort it by platform.
     });
   }
 
+  function normalizeSearchText(text) {
+    return String(text || '')
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, ' ')
+      .trim();
+  }
+
+  function extractSearchTerms(player) {
+    const terms = [];
+    if (player.name) terms.push(player.name);
+    if (player.id) terms.push(player.id);
+    if (player.url) terms.push(player.url);
+
+    const platforms = getPlatforms(player);
+    terms.push(...platforms);
+
+    if (player.represents) {
+      if (Array.isArray(player.represents)) {
+        terms.push(...player.represents);
+      } else if (typeof player.represents === 'object') {
+        terms.push(...Object.values(player.represents));
+      } else {
+        terms.push(player.represents);
+      }
+    }
+
+    if (player.sources && typeof player.sources === 'object') {
+      terms.push(...Object.keys(player.sources));
+      terms.push(...Object.values(player.sources));
+    }
+
+    if (player.experimental && typeof player.experimental === 'object') {
+      terms.push(...Object.keys(player.experimental));
+      terms.push(...Object.values(player.experimental));
+    }
+
+    return normalizeSearchText(terms.filter(Boolean).join(' '));
+  }
+
   function applyFilter() {
     if (!searchInput) return;
-    const query = searchInput.value.trim().toLowerCase();
+    const query = normalizeSearchText(searchInput.value);
     filtered = players.filter(player => {
       const platforms = getPlatforms(player);
-      const searchText = `${player.name} ${player.id} ${platforms.join(' ')}`.toLowerCase();
+      const searchText = extractSearchTerms(player);
       if (query && !searchText.includes(query)) return false;
       if (!currentPlatform) return true;
       return platforms.map(p => p.toLowerCase()).includes(currentPlatform);
@@ -449,7 +531,11 @@ If you have trouble finding your player, sort it by platform.
     fetch(DATA_URL)
       .then(response => response.json())
       .then(data => {
-        players = data.players.filter(p => !playersToRemove.includes(p.id.toLowerCase()));
+        players = data.players.filter(p => {
+          const id = p.id.toLowerCase();
+          const name = (p.name || '').toLowerCase();
+          return !id.includes('placeholder') && name !== 'media';
+        });
         icons = data.icons || {};
         filtered = [...players];
         render();
@@ -457,7 +543,7 @@ If you have trouble finding your player, sort it by platform.
       .catch(error => {
         console.error('Error loading data', error);
         if (grid) {
-          grid.innerHTML = '<div class="mp-no-results">Error loading data. Please update the page.</div>';
+          grid.innerHTML = '<div class="mp-no-results">Error loading data. Please refresh the page.</div>';
         }
       });
 
@@ -471,4 +557,3 @@ If you have trouble finding your player, sort it by platform.
   }
 })();
 </script>
-
