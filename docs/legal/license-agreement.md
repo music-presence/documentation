@@ -23,12 +23,12 @@ This is the License Agreement for the Music Presence desktop application.
 
 Please read this License Agreement ("License") carefully before installing or using Music Presence (the "Software"). By installing or using the Software, you are agreeing to be bound by the terms of this License.
 
-This is the License for version 2.3.5 of the Software and that version only.
+This is the License for version 2.3.6 of the Software and that version only.
 
 ```
 Music Presence
 
-Copyright (c) 2024-2025 Jonas van den Berg
+Copyright (c) 2024-2026 Jonas van den Berg
 
 All rights reserved,
 except those rights explicitly granted in the following permission
@@ -183,27 +183,6 @@ paullouisageneau/libdatachannel
 Licensed under the MPL-2.0 License.
 Copyright (c) 2019-2025 Paul-Louis Ageneau
 <https://github.com/paullouisageneau/libdatachannel>
-
-hrantzsch/keychain
-Licensed under the MIT License.
-Copyright (c) 2019 Hannes Rantzsch, René Meusel
-<https://github.com/hrantzsch/keychain>
-
-libcpr/cpr
-Licensed under the MIT License.
-Copyright (c) 2017-2021 Huu Nguyen
-Copyright (c) 2022 libcpr and many other contributors
-<https://github.com/libcpr/cpr>
-
-zeux/pugixml
-Licensed under the MIT License.
-Copyright (c) 2006-2025 Arseny Kapoulkine
-<https://github.com/zeux/pugixml>
-
-SRombauts/SQLiteCpp
-Licensed under the MIT License.
-Copyright (c) 2012-2025 Sebastien Rombauts
-<https://github.com/SRombauts/SQLiteCpp>
 
 abseil/abseil-cpp
 Licensed under the Apache-2.0 License.
