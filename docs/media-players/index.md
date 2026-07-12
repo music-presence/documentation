@@ -382,6 +382,10 @@ Browse the list of media players that are supported by Music Presence. Note that
     return iconsMap[platform] || '';
   }
 
+  function cleanUrl(url) {
+    return url.replace(/^https?:\/\/(www\.)?/i, "");
+  }
+
   function render() {
     if (!grid || !noResults) return;
 
@@ -436,7 +440,7 @@ Browse the list of media players that are supported by Music Presence. Note that
         urlLink.href = player.url;
         urlLink.target = '_blank';
         urlLink.rel = 'noopener';
-        urlLink.textContent = player.url.replace(/^https?:\/\//, '');
+        urlLink.textContent = cleanUrl(player.url);
         nameDiv.appendChild(urlLink);
       }
       title.appendChild(nameDiv);
