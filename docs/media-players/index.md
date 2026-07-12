@@ -24,10 +24,10 @@ Note that Web only works with Firefox on Linux at the moment.
 
     <div class="mp-filters">
       <span class="mp-filter-label">Platform:</span>
-      <button type="button" class="mp-btn" data-platform="windows"><img class="mp-filter-icon" src="https://img.icons8.com/ios-filled/50/windows-11.png" alt="Windows" />Windows</button>
-      <button type="button" class="mp-btn" data-platform="mac"><img class="mp-filter-icon" src="https://img.icons8.com/ios-glyphs/120/mac-os.png" alt="Mac" />Mac</button>
-      <button type="button" class="mp-btn" data-platform="linux"><img class="mp-filter-icon" src="https://img.icons8.com/ios-filled/100/linux.png" alt="Linux" />Linux</button>
-      <button type="button" class="mp-btn" data-platform="web"><img class="mp-filter-icon" src="https://img.icons8.com/ios/100/globe--v1.png" alt="Web" />Web</button>
+      <button type="button" class="mp-btn" data-platform="windows"><img class="mp-filter-icon" src="/_static/images/media-players/windows-11.png" alt="Windows" />Windows</button>
+      <button type="button" class="mp-btn" data-platform="mac"><img class="mp-filter-icon" src="/_static/images/media-players/mac-os.png" alt="Mac" />Mac</button>
+      <button type="button" class="mp-btn" data-platform="linux"><img class="mp-filter-icon" src="/_static/images/media-players/linux.png" alt="Linux" />Linux</button>
+      <button type="button" class="mp-btn" data-platform="web"><img class="mp-filter-icon" src="/_static/images/media-players/web.png" alt="Web" />Web</button>
     </div>
   </div>
 
@@ -346,10 +346,10 @@ Note that Web only works with Firefox on Linux at the moment.
 
   function getPlatformIcon(platform) {
     const iconsMap = {
-      Windows: 'https://img.icons8.com/ios-filled/50/windows-11.png',
-      Mac: 'https://img.icons8.com/ios-glyphs/120/mac-os.png',
-      Linux: 'https://img.icons8.com/ios-filled/100/linux.png',
-      Web: 'https://img.icons8.com/ios/100/globe--v1.png'
+      Windows: '/_static/images/media-players/windows-11.png',
+      Mac: '/_static/images/media-players/mac-os.png',
+      Linux: '/_static/images/media-players/linux.png',
+      Web: '/_static/images/media-players/web.png'
     };
     return iconsMap[platform] || '';
   }
