@@ -298,8 +298,14 @@ Browse the list of media players that are supported by Music Presence. Note that
     width: 15px;
     height: 15px;
     vertical-align: middle;
-    margin-right: 0.25rem;
+    /* margin-right: 0.25rem; */
     filter: none;
+  }
+  .mp-platform-icon:not(:last-of-type) {
+    margin-right: 0.075rem;
+  }
+  .mp-platform-icon:last-of-type {
+    margin-right: 0.25rem;
   }
   [data-md-color-scheme="slate"] .mp-platform-icon {
     filter: brightness(0) invert(1);
@@ -346,7 +352,18 @@ Browse the list of media players that are supported by Music Presence. Note that
     if (player.experimental && player.experimental.lin_mpris_identity) p.add('Linux');
     if (player.experimental && player.experimental.win_winrt_identity) p.add('Windows');
     if (player.experimental && player.experimental.mac_mediaremote_identity) p.add('Mac');
-    return Array.from(p);
+    let isDesktop = false;
+    if (p.has('Windows') && p.has('Mac') && p.has('Linux')) {
+        p.delete('Windows');
+        p.delete('Mac');
+        p.delete('Linux');
+        isDesktop = true;
+    }
+    array = Array.from(p);
+    if (isDesktop) {
+        array = ['Desktop'].concat(array);
+    }
+    return array;
   }
 
   function getIcon(id) {
@@ -435,15 +452,18 @@ Browse the list of media players that are supported by Music Presence. Note that
           const platformTag = document.createElement('span');
           platformTag.className = 'mp-platform';
 
-          const platformImg = document.createElement('img');
-          platformImg.className = 'mp-platform-icon';
-          platformImg.src = getPlatformIcon(pl);
-          platformImg.alt = pl;
-          platformImg.width = 12;
-          platformImg.height = 12;
+          const pls = pl !== 'Desktop' ? [pl] : ['Windows', 'Mac', 'Linux'];
+          for (const pl of pls) {
+            const platformImg = document.createElement('img');
+            platformImg.className = 'mp-platform-icon';
+            platformImg.src = getPlatformIcon(pl);
+            platformImg.alt = pl;
+            platformImg.width = 12;
+            platformImg.height = 12;
+            platformTag.appendChild(platformImg);
+          }
 
-          platformTag.appendChild(platformImg);
-          platformTag.appendChild(document.createTextNode(pl));
+          platformTag.appendChild(document.createTextNode(pl === 'Desktop' ? 'All Platforms' : pl));
           platformList.appendChild(platformTag);
         });
         card.appendChild(platformList);
