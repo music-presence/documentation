@@ -28,7 +28,7 @@ Browse the list of media players that are supported by Music Presence. Note that
       <button type="button" class="mp-btn" data-platform="mac"><img class="mp-filter-icon" src="/_static/images/media-players/mac-os.png" alt="Mac" />Mac</button>
       <button type="button" class="mp-btn" data-platform="linux"><img class="mp-filter-icon" src="/_static/images/media-players/linux.png" alt="Linux" />Linux</button>
       <button type="button" class="mp-btn" data-platform="web"><img class="mp-filter-icon" src="/_static/images/media-players/web.png" alt="Web" />Web</button>
-      <div class="player-count-container hidden"><span class="player-count">0</span> <span class="player-count-word">Players</span></div>
+      <div class="player-count-container hidden"><span class="player-count">0</span> <span class="player-count-word">players</span> listed</div>
     </div>
   </div>
 
@@ -410,7 +410,7 @@ Browse the list of media players that are supported by Music Presence. Note that
     console.log(document.querySelector('.player-count-container .player-count'));
     document.querySelector('.player-count-container').classList.remove('hidden');
     document.querySelector('.player-count-container .player-count').innerText = String(count);
-    document.querySelector('.player-count-container .player-count-word').innerText = count === 1 ? 'Player' : 'Players';
+    document.querySelector('.player-count-container .player-count-word').innerText = count === 1 ? 'player' : 'players';
   }
 
   function render() {
