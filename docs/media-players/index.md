@@ -154,6 +154,7 @@ Browse the list of media players that are supported by Music Presence. Note that
   font-weight: 700;
 }
 .mp-card-logo img {
+  user-select: none;
   width: 100%;
   height: 100%;
   object-fit: contain;
