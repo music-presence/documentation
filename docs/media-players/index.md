@@ -34,7 +34,7 @@ Browse the list of media players that are supported by Music Presence. Note that
 
   <div class="mp-grid" id="grid"></div>
 
-  <div class="mp-no-results" id="noResults" style="display: none;">No players found with that name. Try searching for another one.</div>
+  <div class="mp-no-results" id="noResults" style="display: none;">No players found with that name and the given filters.</div>
 
 <style>
 .player-count-container {
@@ -253,8 +253,7 @@ Browse the list of media players that are supported by Music Presence. Note that
   text-decoration: underline;
 }
 .mp-no-results {
-  padding: 1.5rem;
-  color: #475569;
+  padding: .75em 0;
 }
 
   [data-md-color-scheme="slate"] .player-count-container .player-count {
@@ -347,7 +346,7 @@ Browse the list of media players that are supported by Music Presence. Note that
   }
   [data-md-color-scheme="slate"] .mp-no-results,
   [data-md-color-scheme="slate"] .mp-footer {
-    color: #94a3b8;
+    /* color: #919191; */
   }
 </style>
 
