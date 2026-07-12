@@ -320,7 +320,7 @@ Browse the list of media players that are supported by Music Presence. Note that
     color: #60a5fa;
   }
   [data-md-color-scheme="slate"] .mp-platform {
-    background: #242424;
+    background: #2a2a2a;
     color: #e5e7eb;
     outline: none;
   }
