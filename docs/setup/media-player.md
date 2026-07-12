@@ -217,7 +217,7 @@ On Windows and Mac, you currently need to use the desktop application for the me
 
     | Player || Instructions |
     |-|-|-|
-    | :custom-firefox:{ style="--md-icon-size: 2em; display: inline;" } | Firefox | Websites and streaming services can be detected when opened in Firefox or a Firefox-based browser, like LibreWolf or Zen Browser, if they are [supported](../media-players/index.md){ target="_blank" }. |
+    | :custom-firefox:{ style="--md-icon-size: 2em; display: inline;" } | Firefox | Websites and streaming services can be detected when opened in Firefox or a Firefox-based browser, like LibreWolf or Zen Browser, if they are [supported](../media-players/index.md). |
     | ![](https://live.musicpresence.app/v3/icons/apple-music/logo-128.png) | <nobr class="desktop">Apple Music</nobr> | ==Third-party=={ .pill } [Sidra](https://github.com/wimpysworld/sidra){ target="_blank" } is a third-party client for Apple Music. |
     | ![](https://live.musicpresence.app/v3/icons/deezer/logo-128.png) | Deezer | ==Third-party=={ .pill } [Deezer for Linux](https://github.com/aunetx/deezer-linux){ target="_blank" } is a third-party client for Deezer. |
     | ![](https://live.musicpresence.app/v3/icons/qobuz/logo-128.png) | Qobuz | ==Third-party=={ .pill } [QBZ](https://github.com/vicrodh/qbz){ target="_blank" } is a third-party client for Qobuz. Unlike the official app for Windows and Mac, this client is fully compatible with Music Presence. |
