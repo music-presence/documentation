@@ -28,6 +28,7 @@ Browse the list of media players that are supported by Music Presence. Note that
       <button type="button" class="mp-btn" data-platform="mac"><img class="mp-filter-icon" src="/_static/images/media-players/mac-os.png" alt="Mac" />Mac</button>
       <button type="button" class="mp-btn" data-platform="linux"><img class="mp-filter-icon" src="/_static/images/media-players/linux.png" alt="Linux" />Linux</button>
       <button type="button" class="mp-btn" data-platform="web"><img class="mp-filter-icon" src="/_static/images/media-players/web.png" alt="Web" />Web</button>
+      <div class="player-count-container hidden"><span class="player-count">0</span> <span class="player-count-word">Players</span></div>
     </div>
   </div>
 
@@ -36,6 +37,22 @@ Browse the list of media players that are supported by Music Presence. Note that
   <div class="mp-no-results" id="noResults" style="display: none;">No players found with that name. Try searching for another one.</div>
 
 <style>
+.player-count-container {
+    font-size: 1.25em;
+    font-weight: 500;
+    margin-left: 0.5em;
+    user-select: none;
+}
+.player-count-container .player-count {
+    text-decoration: underline;
+    text-decoration-color: #999999;
+}
+.player-count-container.hidden {
+    visibility: hidden;
+}
+.player-count-container {
+    visibility: visible;
+}
 .mp-intro {
   max-width: 1000px;
   margin: 0 auto 1.5rem;
@@ -240,6 +257,9 @@ Browse the list of media players that are supported by Music Presence. Note that
   color: #475569;
 }
 
+  [data-md-color-scheme="slate"] .player-count-container .player-count {
+    text-decoration-color: #646464;
+}
   [data-md-color-scheme="slate"] .mp-card-title .name a {
     color: #8b8b8b;
     text-decoration-color: #4e4e4e;
@@ -387,8 +407,17 @@ Browse the list of media players that are supported by Music Presence. Note that
     return url.replace(/^https?:\/\/(www\.)?/i, "");
   }
 
+  function updatePlayerCount(count) {
+    console.log(document.querySelector('.player-count-container .player-count'));
+    document.querySelector('.player-count-container').classList.remove('hidden');
+    document.querySelector('.player-count-container .player-count').innerText = String(count);
+    document.querySelector('.player-count-container .player-count-word').innerText = count === 1 ? 'Player' : 'Players';
+  }
+
   function render() {
     if (!grid || !noResults) return;
+
+    updatePlayerCount(filtered.length);
 
     if (!filtered.length) {
       grid.innerHTML = '';
