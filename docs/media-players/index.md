@@ -169,6 +169,12 @@ Browse the list of media players that are supported by Music Presence. Note that
   place-items: center;
   color: #1e293b;
   font-weight: 700;
+  user-select: none;
+}
+.mp-card-logo-fallback {
+  background-color: #e7e7e7;
+  border-radius: 10em;
+  padding-bottom: 1px;
 }
 .mp-card-logo img {
   user-select: none;
@@ -314,6 +320,9 @@ Browse the list of media players that are supported by Music Presence. Note that
     background: #1B1B1B;
     color: #e5e7eb;
   }
+  [data-md-color-scheme="slate"] .mp-card-logo-fallback {
+    background: #343434;
+  }
   .mp-platform-icon {
     width: 15px;
     height: 15px;
@@ -452,7 +461,7 @@ Browse the list of media players that are supported by Music Presence. Note that
         logoElement.appendChild(img);
       } else {
         logoElement.className = 'mp-card-logo-fallback';
-        logoElement.textContent = player.name?.charAt(0) || '';
+        logoElement.textContent = player.name?.charAt(0).toUpperCase() || '';
       }
 
       const title = document.createElement('div');
