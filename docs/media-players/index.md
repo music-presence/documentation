@@ -362,6 +362,7 @@ Browse the list of media players that are supported by Music Presence. Note that
 <script>
 (function () {
   const DATA_URL = 'https://live.musicpresence.app/v3/players.json';
+  let originalPlayers = [];
   let players = [];
   let icons = {};
   let filtered = [];
@@ -552,6 +553,15 @@ Browse the list of media players that are supported by Music Presence. Note that
     if (player.represents) {
       if (Array.isArray(player.represents)) {
         terms.push(...player.represents);
+        if (originalPlayers.length > 0) {
+            for (const id of player.represents) {
+                for (const otherPlayer of originalPlayers) {
+                    if (otherPlayer.id === id) {
+                        terms.push(otherPlayer.name);
+                    }
+                }
+            }
+        }
       } else if (typeof player.represents === 'object') {
         terms.push(...Object.values(player.represents));
       } else {
@@ -641,7 +651,8 @@ Browse the list of media players that are supported by Music Presence. Note that
     fetch(DATA_URL)
       .then(response => response.json())
       .then(data => {
-        players = data.players.filter(p => {
+        originalPlayers = data.players;
+        players = originalPlayers.filter(p => {
           const id = p.id.toLowerCase();
           const name = (p.name || '').toLowerCase();
           return !id.includes('placeholder') && name !== 'media';
