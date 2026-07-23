@@ -189,14 +189,19 @@
     width: 12.5rem;
   }
   @supports selector(::-webkit-scrollbar) {
-    [dir=ltr] .md-sidebar__inner {
+    [dir=ltr] [data-md-component="sidebar"][data-md-type="navigation"] .md-sidebar__inner {
       padding-right: calc(100% - 12.5rem);
     }
   }
-}
-[data-md-component="sidebar"][data-md-type="toc"] {
-  width: 13rem;
-  /* margin-right: -1rem; */
+  [data-md-component="sidebar"][data-md-type="toc"] {
+    width: 13.5rem;
+    /* margin-right: -1rem; */
+  }
+  @supports selector(::-webkit-scrollbar) {
+    [dir=ltr] [data-md-component="sidebar"][data-md-type="toc"] .md-sidebar__inner {
+      padding-right: calc(100% - 13.5rem);
+    }
+  }
 }
 
 /* [Zensical] Move the logo a little to the left. */
