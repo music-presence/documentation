@@ -583,6 +583,20 @@ Browse the list of media players that are supported by Music Presence. Note that
       if (!currentPlatform) return true;
       return platforms.map(p => p.toLowerCase()).includes(currentPlatform);
     });
+    filtered.sort((a, b) => {
+        const ac = a.id.toLowerCase().includes(query) || a.name.toLowerCase().includes(query);
+        const bc = b.id.toLowerCase().includes(query) || b.name.toLowerCase().includes(query);
+        if (ac && !bc) {
+            return -1;
+        }
+        if (!ac && bc) {
+            return 1;
+        }
+        if (ac && bc) {
+            return a.name.length - b.name.length;
+        }
+        return 0;
+    });
     render();
   }
 
