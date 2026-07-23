@@ -618,6 +618,9 @@ Browse the list of media players that are supported by Music Presence. Note that
     }
 
     const query = getQueryParameter();
+    if (typeof query === 'string' && query.length > 0) {
+        searchInput.value = query;
+    }
 
     fetch(DATA_URL)
       .then(response => response.json())
@@ -628,11 +631,7 @@ Browse the list of media players that are supported by Music Presence. Note that
           return !id.includes('placeholder') && name !== 'media';
         });
         icons = data.icons || {};
-        filtered = [...players];
-        if (typeof query === 'string' && query.length > 0) {
-            searchInput.value = query;
-            applyFilter();
-        }
+        applyFilter();
         render();
       })
       .catch(error => {
