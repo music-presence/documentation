@@ -188,6 +188,10 @@ Some media players are known to not report what they are playing or are known to
 
 On Windows and Mac, you currently need to use the desktop application for the media player or streaming service you are using, as websites are not supported yet. The following table contains a list of supported official and third-party desktop applications.
 
+!!! warning "Installing websites"
+
+    Some websites show an "**Install**" button in the address bar. This does **not** install a desktop application, you are still running a website and it can't be detected by Music Presence. You need to install and run a proper desktop application.
+
 <div class="tabbed-set-table-next"></div>
 
 === ":fontawesome-brands-windows:&ensp;Windows"
