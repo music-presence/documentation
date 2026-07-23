@@ -176,7 +176,7 @@ Some media players are known to not report what they are playing or are known to
 
     | Player || Instructions |
     |-|-|-|
-    | ![](https://live.musicpresence.app/v3/icons/qobuz/logo-128.png) | Qobuz | Qobuz does not report what it is playing on Mac.  |
+    | ![](https://live.musicpresence.app/v3/icons/qobuz/logo-128.png) | Qobuz | Qobuz does not report what it is playing on Mac. For compatibility with Music Presence you will need to use a third-party player like [QBZ](https://github.com/vicrodh/qbz). |
 
 === ":custom-linux:&ensp;Linux"
 
