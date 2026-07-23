@@ -157,8 +157,6 @@ Make sure to select the correct operating system by clicking on the respective t
     |-|-|-|
     | ![](https://live.musicpresence.app/v3/icons/musicbee/logo-128.png) | MusicBee | If you run MusicBee under Wine, install the [`mb_MPRISBee`](https://github.com/UrbanCMC/mb_MPRISBee){ target="_blank" } plugin. |
 
-*[ToS]: Terms of Service
-
 ## Media players with known issues
 
 Some media players are known to not report what they are playing or are known to report inaccurate information. If you use one of these players, consider [contacting the developer](#support-message-template) of that media player, so they can improve its integration with the system.
@@ -170,7 +168,7 @@ Some media players are known to not report what they are playing or are known to
     | Player || Instructions |
     |-|-|-|
     | ![](https://live.musicpresence.app/v3/icons/amazon-music/logo-128.png) | <nobr class="desktop">Amazon Music</nobr> | Amazon Music does not report any album cover image and sometimes reports very inaccurate or scrambled song metadata. |
-    | ![](https://live.musicpresence.app/v3/icons/qobuz/logo-128.png) | Qobuz | Qobuz does not report what it is playing anymore since a past update. You can try [downgrading](https://github.com/ungive/discord-music-presence/issues/244#issuecomment-3556269025){ target="_blank" } or [patching](https://github.com/TubaApollo/qobuz-smtc){ target="_blank" } it (this may violate Qobuz ToS, use at your own risk). |
+    | ![](https://live.musicpresence.app/v3/icons/qobuz/logo-128.png) | Qobuz | Qobuz does not report what it is playing anymore since a past update. You can try [downgrading](https://github.com/ungive/discord-music-presence/issues/244#issuecomment-3556269025){ target="_blank" } or [patching](https://github.com/TubaApollo/qobuz-smtc){ target="_blank" } it (this may violate Qobuz's Terms of Services, use at your own risk). |
     | ![](https://live.musicpresence.app/v3/icons/tidal/logo-128.png) | TIDAL | TIDAL does not report the album name of the playing song. If the [TIDAL API](../discord-presence/music-apis.md) is enabled for [Discord Presence](../discord-presence/intro.md), the album name can only be guessed and may sometimes be incorrect. |
     | ![](https://live.musicpresence.app/v3/icons/windows-media-player/logo-128.png) | Windows Media Player | Windows Media Player sometimes does not report any album cover image and tends to stop reporting what it is playing after playing a few songs. |
 
