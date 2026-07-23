@@ -533,3 +533,8 @@ details.info summary::before {
 strong {
   font-weight: 600 !important;
 }
+
+/* [Zensical] Do not use the accent color for focused links. */
+.md-typeset a:focus:not(:hover) {
+  color: var(--md-typeset-a-color) !important;
+}
