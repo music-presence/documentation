@@ -661,6 +661,15 @@ a.mp-platform {
       return platforms.map(p => p.toLowerCase()).includes(currentPlatform);
     });
     filtered.sort((a, b) => {
+        if (a.name.length > 0 && !a.name[0].match(/[a-z]/i)) {
+            return 1;
+        }
+        if (b.name.length > 0 && !b.name[0].match(/[a-z]/i)) {
+            return -1;
+        }
+        return a.name.localeCompare(b.name);
+    });
+    filtered.sort((a, b) => {
         const ac = a.id.toLowerCase().includes(query) || a.name.toLowerCase().includes(query);
         const bc = b.id.toLowerCase().includes(query) || b.name.toLowerCase().includes(query);
         if (ac && !bc) {
@@ -668,9 +677,6 @@ a.mp-platform {
         }
         if (!ac && bc) {
             return 1;
-        }
-        if (ac && bc) {
-            return a.name.length - b.name.length;
         }
         return 0;
     });
