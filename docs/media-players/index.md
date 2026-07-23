@@ -511,13 +511,16 @@ Browse the list of media players that are supported by Music Presence. Note that
           platformTag.className = 'mp-platform';
 
           const pls = pl !== 'Desktop' ? [pl] : ['Windows', 'Mac', 'Linux'];
-          for (const pl of pls) {
+          for (const pln of pls) {
             const platformImg = document.createElement('img');
             platformImg.className = 'mp-platform-icon';
-            platformImg.src = getPlatformIcon(pl);
-            platformImg.alt = pl;
+            platformImg.src = getPlatformIcon(pln);
+            platformImg.alt = pln;
             platformImg.width = 12;
             platformImg.height = 12;
+            if (pl === 'Desktop') {
+                platformImg.title = pln;
+            }
             platformTag.appendChild(platformImg);
           }
 
