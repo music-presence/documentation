@@ -161,6 +161,7 @@ Browse the list of media players that are supported by Music Presence. Note that
 }
 .mp-card-logo,
  .mp-card-logo-fallback {
+  pointer-events: none;
   width: 44px;
   height: 44px;
   flex-shrink: 0;
@@ -324,6 +325,7 @@ Browse the list of media players that are supported by Music Presence. Note that
     background: #343434;
   }
   .mp-platform-icon {
+    pointer-events: none;
     width: 15px;
     height: 15px;
     vertical-align: middle;
