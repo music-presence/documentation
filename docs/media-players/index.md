@@ -537,7 +537,6 @@ Browse the list of media players that are supported by Music Presence. Note that
   function normalizeSearchText(text) {
     return String(text || '')
       .toLowerCase()
-      .replace(/[^a-z0-9]+/g, ' ')
       .trim();
   }
 
