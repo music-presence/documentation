@@ -521,7 +521,7 @@ Browse the list of media players that are supported by Music Presence. Note that
             platformTag.appendChild(platformImg);
           }
 
-          platformTag.appendChild(document.createTextNode(pl === 'Desktop' ? 'All Platforms' : pl));
+          platformTag.appendChild(document.createTextNode(pl === 'Desktop' ? 'Desktop' : pl));
           platformList.appendChild(platformTag);
         });
         card.appendChild(platformList);
