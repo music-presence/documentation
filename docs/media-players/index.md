@@ -241,12 +241,17 @@ Browse the list of media players that are supported by Music Presence. Note that
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
-  padding: 0 0.45rem;
+  padding: 0 0.55rem;
   border-radius: 999px;
   background: #f4f4f4;
   outline: 1px solid #d5d5d5;
   color: #1f2937;
   white-space: nowrap;
+}
+a.mp-platform {
+  transition: background 0.16s, border-color 0.16s;
+  text-decoration: none;
+  cursor: pointer;
 }
 .mp-link {
   display: inline-flex;
@@ -356,8 +361,17 @@ Browse the list of media players that are supported by Music Presence. Note that
   }
   [data-md-color-scheme="slate"] .mp-platform {
     background: #2a2a2a;
-    color: #e5e7eb;
+    color: #e5e7eb !important;
     outline: none;
+  }
+  [data-md-color-scheme="slate"] a.mp-platform:hover {
+    background: #3e3e3e;
+  }
+  [data-md-color-scheme="default"] a.mp-platform {
+    color: black !important;
+  }
+  [data-md-color-scheme="default"] a.mp-platform:hover {
+    background: white;
   }
   [data-md-color-scheme="slate"] .mp-no-results,
   [data-md-color-scheme="slate"] .mp-footer {
@@ -546,16 +560,17 @@ Browse the list of media players that are supported by Music Presence. Note that
             return 0;
         });
         platforms.forEach(pl => {
-          const platformTag = document.createElement('span');
+          const isClient = pl.startsWith(':');
+          const platformTag = document.createElement(isClient ? 'a' : 'span');
           platformTag.className = 'mp-platform';
-          if (pl.startsWith(':')) {
+          if (isClient) {
             platformTag.style.paddingLeft = '0.4em';
           }
 
           const pls = pl !== 'Desktop' ? [pl] : ['Windows', 'Mac', 'Linux'];
           for (const pln of pls) {
             const platformImg = document.createElement('img');
-            if (pln.startsWith(':')) {
+            if (isClient) {
                 platformImg.className = 'mp-client-icon';
                 platformImg.src = getIcon(pln.substring(1));
                 platformImg.width = 20;
@@ -573,10 +588,12 @@ Browse the list of media players that are supported by Music Presence. Note that
             platformTag.appendChild(platformImg);
           }
 
-          if (pl.startsWith(':')) {
+          if (isClient) {
             const player = getPlayer(pl.substring(1));
             platformTag.appendChild(document.createTextNode('Client'));
             platformTag.title = player.name + " Client";
+            platformTag.href = player.url;
+            platformTag.target = '_blank';
           } else {
             platformTag.appendChild(document.createTextNode(pl === 'Desktop' ? 'Desktop' : pl));
           }
