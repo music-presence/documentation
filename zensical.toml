@@ -75,7 +75,6 @@ features = [
     "content.action.edit",
     "content.tooltips",
     "navigation.instant",
-    "navigation.path",
     "navigation.sections",
     "navigation.tabs",
     "navigation.indexes",
