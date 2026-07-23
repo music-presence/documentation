@@ -10,3 +10,5 @@ todo.txt
 !*.env.example
 __pycache__
 docs/_legacy
+*.txt
+!requirements.txt
