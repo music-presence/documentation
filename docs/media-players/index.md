@@ -574,7 +574,9 @@ Browse the list of media players that are supported by Music Presence. Note that
           }
 
           if (pl.startsWith(':')) {
+            const player = getPlayer(pl.substring(1));
             platformTag.appendChild(document.createTextNode('Client'));
+            platformTag.title = player.name + " Client";
           } else {
             platformTag.appendChild(document.createTextNode(pl === 'Desktop' ? 'Desktop' : pl));
           }
