@@ -338,6 +338,10 @@ Browse the list of media players that are supported by Music Presence. Note that
   .mp-platform-icon:last-of-type {
     margin-right: 0.25rem;
   }
+  .mp-client-icon {
+    pointer-events: none;
+    margin-right: 0.2rem;
+  }
   [data-md-color-scheme="slate"] .mp-platform-icon {
     filter: brightness(0) invert(1);
   }
@@ -374,9 +378,20 @@ Browse the list of media players that are supported by Music Presence. Note that
   const noResults = document.getElementById('noResults');
   const searchInput = document.getElementById('search');
 
+  function includeIdFilter(id) {
+    id = id.toLowerCase();
+    return id !== 'media' && !id.includes('placeholder');
+  }
+
   function getPlatforms(player) {
     const p = new Set();
     const s = player.sources || {};
+    if (Array.isArray(player.represents)) {
+        const representsIds = player.represents.filter(id => includeIdFilter(id));
+        for (const id of representsIds) {
+            p.add(':' + id);
+        }
+    }
     if (s.win_winrt || s.win_legacy) p.add('Windows');
     if (s.mac_mediaremote || s.mac_nowplaying) p.add('Mac');
     if (s.lin_mpris) p.add('Linux');
@@ -396,6 +411,15 @@ Browse the list of media players that are supported by Music Presence. Note that
         array = ['Desktop'].concat(array);
     }
     return array;
+  }
+
+  function getPlayer(id) {
+    for (const player of originalPlayers) {
+        if (player.id === id) {
+            return player;
+        }
+    }
+    return undefined;
   }
 
   function getIcon(id) {
@@ -509,25 +533,51 @@ Browse the list of media players that are supported by Music Presence. Note that
       if (platforms.length) {
         const platformList = document.createElement('div');
         platformList.className = 'mp-platforms';
+        platforms.sort((a, b) => {
+            if (a.startsWith(':') && b.startsWith(':')) {
+                return a.localeCompare(b);
+            }
+            if (a.startsWith(':')) {
+                return -1;
+            }
+            if (b.startsWith(':')) {
+                return 1;
+            }
+            return 0;
+        });
         platforms.forEach(pl => {
           const platformTag = document.createElement('span');
           platformTag.className = 'mp-platform';
+          if (pl.startsWith(':')) {
+            platformTag.style.paddingLeft = '0.4em';
+          }
 
           const pls = pl !== 'Desktop' ? [pl] : ['Windows', 'Mac', 'Linux'];
           for (const pln of pls) {
             const platformImg = document.createElement('img');
-            platformImg.className = 'mp-platform-icon';
-            platformImg.src = getPlatformIcon(pln);
+            if (pln.startsWith(':')) {
+                platformImg.className = 'mp-client-icon';
+                platformImg.src = getIcon(pln.substring(1));
+                platformImg.width = 20;
+                platformImg.height = 20;
+            } else {
+                platformImg.className = 'mp-platform-icon';
+                platformImg.src = getPlatformIcon(pln);
+                platformImg.width = 12;
+                platformImg.height = 12;
+            }
             platformImg.alt = pln;
-            platformImg.width = 12;
-            platformImg.height = 12;
             if (pl === 'Desktop') {
                 platformImg.title = pln;
             }
             platformTag.appendChild(platformImg);
           }
 
-          platformTag.appendChild(document.createTextNode(pl === 'Desktop' ? 'Desktop' : pl));
+          if (pl.startsWith(':')) {
+            platformTag.appendChild(document.createTextNode('Client'));
+          } else {
+            platformTag.appendChild(document.createTextNode(pl === 'Desktop' ? 'Desktop' : pl));
+          }
           platformList.appendChild(platformTag);
         });
         card.appendChild(platformList);
@@ -555,13 +605,10 @@ Browse the list of media players that are supported by Music Presence. Note that
     if (player.represents) {
       if (Array.isArray(player.represents)) {
         terms.push(...player.represents);
-        if (originalPlayers.length > 0) {
-            for (const id of player.represents) {
-                for (const otherPlayer of originalPlayers) {
-                    if (otherPlayer.id === id) {
-                        terms.push(otherPlayer.name);
-                    }
-                }
+        for (const id of player.represents) {
+            const player = getPlayer(id);
+            if (typeof player === 'object') {
+                terms.push(player.name);
             }
         }
       } else if (typeof player.represents === 'object') {
@@ -654,11 +701,7 @@ Browse the list of media players that are supported by Music Presence. Note that
       .then(response => response.json())
       .then(data => {
         originalPlayers = data.players;
-        players = originalPlayers.filter(p => {
-          const id = p.id.toLowerCase();
-          const name = (p.name || '').toLowerCase();
-          return !id.includes('placeholder') && name !== 'media';
-        });
+        players = originalPlayers.filter(p => includeIdFilter(p.id));
         icons = data.icons || {};
         applyFilter();
         render();
