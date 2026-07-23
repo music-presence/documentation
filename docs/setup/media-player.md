@@ -178,13 +178,13 @@ Some media players are known to not report what they are playing or are known to
 
     | Player || Instructions |
     |-|-|-|
-    | ![](https://live.musicpresence.app/v3/icons/qobuz/logo-128.png) | Qobuz | Qobuz does not report what it is playing on Mac. |
+    | ![](https://live.musicpresence.app/v3/icons/qobuz/logo-128.png) | Qobuz | Qobuz does not report what it is playing on Mac.  |
 
 === ":custom-linux:&ensp;Linux"
 
     | Player || Instructions |
     |-|-|-|
-    | ![](https://live.musicpresence.app/v3/icons/strawberry/logo-128.png) | Strawberry | If you installed Strawberry via [Flatpak](https://flathub.org/apps/org.strawberrymusicplayer.strawberry){ target="_blank" }, then album covers may not show up in your Discord status. This is a [bug](https://github.com/flathub/org.strawberrymusicplayer.strawberry/issues/133){ target="_blank" } in the Flatpak-version of Strawberry. You need to run Strawberry natively instead, until the bug is fixed. |
+    | ![](https://live.musicpresence.app/v3/icons/strawberry/logo-128.png) | Strawberry | If you installed Strawberry via [Flatpak](https://flathub.org/apps/org.strawberrymusicplayer.strawberry){ target="_blank" }, then album covers may not show up in your Discord status. This is a [known bug](https://github.com/flathub/org.strawberrymusicplayer.strawberry/issues/133){ target="_blank" } in the Flatpak-version of Strawberry. You need to run Strawberry natively instead, until the bug is fixed. |
 
 ## Websites and browser support
 
