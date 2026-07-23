@@ -81,19 +81,20 @@ img[src*="/logo-128.png"] {
 
 This guide covers how to set up Music Presence with your media player.
 
-## Supported media players
+## Overview
 
-Check the list of [supported media players](../media-players/index.md){ target="_blank" }, to know if your media player is supported.
-
-If your media player is not listed, then follow the [instructions](#adding-support-for-a-media-player) below on how you can help with adding support for it to Music Presence.
+1. First, check if your media player is in the list of [supported media players](../media-players/index.md){ target="_blank" }
+2. If your media player is listed, but not detected, read these sections carefully:
+    - [Media player configuration](#media-player-configuration): You might need to enable a specific setting in your media player or it might need a plugin or helper program to be detected
+    - [Media players with known issues](#media-players-with-known-issues): Some media players have limitations
+    - [Websites and browser support](#websites-and-browser-support): Websites are not supported yet, with a few exceptions. You need to install a desktop application for now
+3. If your media player is still not detected, follow these steps:
+    - Check, if your media player installation fulfills the [minimum requirements](#minimum-requirements)
+    - If it does, follow the steps to [add support for your media player](#adding-support-for-a-media-player)
 
 ## Minimum requirements
 
-For Music Presence to detect media playback, other applications must report information about what media they are playing to your operating system. You can see if other applications do this, by checking the [media control interface](#media-control-interfaces) of your device.
-
-If the media does not show up, refer to the [next section](#media-player-configuration). Make sure you are playing something, paused media may not always appear.
-
-<h2 id="media-control-interfaces" class="anchor-target">Media control interfaces</h2>
+For Music Presence to detect media playback, applications must report information about what media they are playing to your operating system. You can see if your media player does this, by checking the media control interface of your device:
 
 === ":fontawesome-brands-windows:&ensp;Windows"
 
@@ -234,15 +235,16 @@ On Windows and Mac, you currently need to use the desktop application for the me
 
 ## Adding support for a media player
 
-If your media player is not detected, despite fulfilling the [minimum requirements](#minimum-requirements), support may not have been added yet. Follow these instructions to help:
+If your media player is not detected, despite fulfilling the [minimum requirements](#minimum-requirements), your specific installation may not be recognized by Music Presence yet.
+
+Follow these instructions to help add support for it:
 
 1. Open the [Music Presence](./install.md){ target="_blank" } app
-2. Play something with your media player and let it play
+2. Start playing something with your media player and let it play
 3. Click the <nobr>:custom-musicpresence: Music Presence</nobr> icon in your <span class="os-dependent-text" data-windows="tray menu" data-mac="menu bar" data-linux="system tray">tray menu</span>. [Where is this?](./install.md#usage){ target="_blank" }
 4. Click on "Help" and then on "Submit detected media players"
 5. A GitHub issue opens. Submit it and you'll receive a reply within at most a few days
-
-If you do not have a GitHub account, you can join the [Discord server](https://go.musicpresence.app/discord-invite) instead and leave a message that contains the URL that opened in your browser.
+6. If you do not have a GitHub account, you can join the [Discord server](https://go.musicpresence.app/discord-invite) instead and leave a message that contains the URL that opened in your browser.
 
 ---
 
