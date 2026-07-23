@@ -188,10 +188,6 @@ Some media players are known to not report what they are playing or are known to
 
 On Windows and Mac, you currently need to use the desktop application for the media player or streaming service you are using, as websites are not supported yet. The following table contains a list of supported official and third-party desktop applications.
 
-!!! info "Support for websites is coming soon"
-
-    Click "Subscribe" in the sidebar of [this GitHub issue](https://github.com/ungive/discord-music-presence/issues/5){ target="_blank" } to receive e-mail updates. Meanwhile, you can already install and test the [browser extension](https://github.com/ungive/media-control-extension#readme){ target="_blank" } that will enable browser support later.
-
 <div class="tabbed-set-table-next"></div>
 
 === ":fontawesome-brands-windows:&ensp;Windows"
@@ -223,6 +219,10 @@ On Windows and Mac, you currently need to use the desktop application for the me
     | ![](https://live.musicpresence.app/v3/icons/spotify/logo-128.png) | Spotify | Download Spotify from [spotify.com/download/linux](https://www.spotify.com/download/linux){ target="_blank" }. |
     | ![](https://live.musicpresence.app/v3/icons/tidal/logo-128.png) | TIDAL | ==Third-party=={ .pill } [Tidal Hi-Fi](https://github.com/Mastermindzh/tidal-hifi){ target="_blank" } and [High Tide](https://github.com/Nokse22/high-tide) are third-party clients for TIDAL. |
     | ![](https://live.musicpresence.app/v3/icons/youtube-music/logo-128.png) | <nobr class="desktop">YouTube Music</nobr> | ==Third-party=={ .pill } [Pear Desktop](https://github.com/pear-devs/pear-desktop){ target="_blank" } is a third-party client for YouTube Music. |
+
+!!! info "Support for websites is coming soon"
+
+    Click "Subscribe" in the sidebar of [this GitHub issue](https://github.com/ungive/discord-music-presence/issues/5){ target="_blank" } to receive e-mail updates. Meanwhile, you can already install and test the [browser extension](https://github.com/ungive/media-control-extension#readme){ target="_blank" } that will enable browser support later.
 
 ## Multimedia and radio players
 
