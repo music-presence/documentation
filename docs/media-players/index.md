@@ -416,7 +416,6 @@ Browse the list of media players that are supported by Music Presence. Note that
   }
 
   function updatePlayerCount(count) {
-    console.log(document.querySelector('.player-count-container .player-count'));
     document.querySelector('.player-count-container').classList.remove('hidden');
     document.querySelector('.player-count-container .player-count').innerText = String(count);
     document.querySelector('.player-count-container .player-count-word').innerText = count === 1 ? 'player' : 'players';
