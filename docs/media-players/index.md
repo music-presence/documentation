@@ -422,10 +422,27 @@ Browse the list of media players that are supported by Music Presence. Note that
     document.querySelector('.player-count-container .player-count-word').innerText = count === 1 ? 'player' : 'players';
   }
 
+  function updateQueryParameter() {
+    const url = new URL(window.location.href);
+    const value = searchInput.value;
+    if (value.length > 0) {
+        url.searchParams.set("q", searchInput.value);
+    } else {
+        url.searchParams.delete("q");
+    }
+    history.replaceState({}, "", url);
+  }
+
+  function getQueryParameter() {
+    const url = new URL(window.location.href);
+    return url.searchParams.get("q");
+  }
+
   function render() {
     if (!grid || !noResults) return;
 
     updatePlayerCount(filtered.length);
+    updateQueryParameter();
 
     if (!filtered.length) {
       grid.innerHTML = '';
@@ -601,6 +618,8 @@ Browse the list of media players that are supported by Music Presence. Note that
       return;
     }
 
+    const query = getQueryParameter();
+
     fetch(DATA_URL)
       .then(response => response.json())
       .then(data => {
@@ -611,6 +630,10 @@ Browse the list of media players that are supported by Music Presence. Note that
         });
         icons = data.icons || {};
         filtered = [...players];
+        if (typeof query === 'string' && query.length > 0) {
+            searchInput.value = query;
+            applyFilter();
+        }
         render();
       })
       .catch(error => {
