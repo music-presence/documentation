@@ -397,7 +397,7 @@ a.mp-platform {
     return id !== 'media' && !id.includes('placeholder');
   }
 
-  function getPlatforms(player) {
+  function getPlatforms(player, normalizeDesktop = false) {
     const p = new Set();
     const s = player.sources || {};
     if (Array.isArray(player.represents)) {
@@ -414,14 +414,14 @@ a.mp-platform {
     if (player.experimental && player.experimental.win_winrt_identity) p.add('Windows');
     if (player.experimental && player.experimental.mac_mediaremote_identity) p.add('Mac');
     let isDesktop = false;
-    if (p.has('Windows') && p.has('Mac') && p.has('Linux')) {
+    if (normalizeDesktop && p.has('Windows') && p.has('Mac') && p.has('Linux')) {
         p.delete('Windows');
         p.delete('Mac');
         p.delete('Linux');
         isDesktop = true;
     }
     array = Array.from(p);
-    if (isDesktop) {
+    if (normalizeDesktop && isDesktop) {
         array = ['Desktop'].concat(array);
     }
     return array;
@@ -494,7 +494,7 @@ a.mp-platform {
     grid.innerHTML = '';
 
     filtered.forEach(player => {
-      const platforms = getPlatforms(player);
+      const platforms = getPlatforms(player, true);
       const iconUrl = getIcon(player.id);
 
       const card = document.createElement('article');
