@@ -470,12 +470,22 @@ a.mp-platform {
     } else {
         url.searchParams.delete("q");
     }
+    if (currentPlatform !== null && currentPlatform.length > 0) {
+        url.searchParams.set("platform", currentPlatform);
+    } else {
+        url.searchParams.delete("platform");
+    }
     history.replaceState({}, "", url);
   }
 
   function getQueryParameter() {
     const url = new URL(window.location.href);
     return url.searchParams.get("q");
+  }
+
+  function getPlatformParameter() {
+    const url = new URL(window.location.href);
+    return url.searchParams.get("platform");
   }
 
   function render() {
@@ -683,6 +693,22 @@ a.mp-platform {
     render();
   }
 
+  function updatePlatform(selectedPlatform = null) {
+    const filterButtons = document.querySelectorAll('.mp-filters [data-platform]');
+    if (selectedPlatform !== null) {
+      filterButtons.forEach(button => {
+          const platform = button.dataset.platform;
+          if (selectedPlatform === platform) {
+              button.classList.add('active');
+          } else {
+              button.classList.remove('active');
+          }
+      });
+    } else {
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+    }
+  }
+
   function attachListeners() {
     if (searchInput) {
       searchInput.addEventListener('input', applyFilter);
@@ -699,14 +725,8 @@ a.mp-platform {
       button.addEventListener('click', event => {
         event.preventDefault();
         const platform = button.dataset.platform;
-        if (currentPlatform === platform) {
-          currentPlatform = null;
-          button.classList.remove('active');
-        } else {
-          filterButtons.forEach(btn => btn.classList.remove('active'));
-          button.classList.add('active');
-          currentPlatform = platform;
-        }
+        currentPlatform = currentPlatform != platform ? platform : null;
+        updatePlatform(currentPlatform);
         applyFilter();
       });
     });
@@ -721,6 +741,12 @@ a.mp-platform {
     if (typeof query === 'string' && query.length > 0) {
         searchInput.value = query;
     }
+
+    const platform = getPlatformParameter();
+    if (typeof platform === 'string' && platform.length > 0) {
+        currentPlatform = platform;
+    }
+    updatePlatform(currentPlatform);
 
     fetch(DATA_URL)
       .then(response => response.json())
