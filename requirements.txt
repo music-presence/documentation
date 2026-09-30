@@ -1,2 +1,12 @@
-zensical
-python-dotenv
+click==8.3.3
+deepmerge==2.0
+Jinja2==3.1.6
+Markdown==3.10.2
+MarkupSafe==3.0.3
+pathspec==1.1.1
+Pygments==2.20.0
+pymdown-extensions==11.0.2
+python-dotenv==1.2.2
+PyYAML==6.0.3
+tomli==2.4.1
+zensical==0.0.66
